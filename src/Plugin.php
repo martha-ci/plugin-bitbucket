@@ -18,11 +18,6 @@ class Plugin extends AbstractPlugin
      */
     public function init()
     {
-        $this->getPluginManager()->registerRemoteProjectProvider(
-            $this,
-            '\Martha\Plugin\BitBucket\RemoteProjectProvider'
-        );
-
         $this->getPluginManager()->registerAuthenticationProvider(
             $this,
             '\Martha\Plugin\BitBucket\Authentication\Provider\BitBucketAuthProvider'

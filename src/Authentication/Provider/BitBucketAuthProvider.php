@@ -87,15 +87,15 @@ class BitBucketAuthProvider extends AbstractOAuth1Provider
      */
     public function validateResult(Request $request)
     {
-        if (!$request->getGet('oauth_token') || !$request->getGet('oauth_verifier')) {
+        if (!$request->get('oauth_token') || !$request->get('oauth_verifier')) {
             return false;
         }
 
         $temporaryCredentials = unserialize($_SESSION['credentials']); // todo fixme
         $tokenCredentials = $this->server->getTokenCredentials(
             $temporaryCredentials,
-            $request->getGet('oauth_token'),
-            $request->getGet('oauth_verifier')
+            $request->get('oauth_token'),
+            $request->get('oauth_verifier')
         );
 
         $userInfo = $this->server->getUserDetails($tokenCredentials);
