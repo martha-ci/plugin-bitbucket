@@ -24,6 +24,7 @@
     },
     "require": {
         "php": ">=5.5",
-        "league/oauth1-client": "~1.0"
+        "league/oauth1-client": "~1.0",
+        "gentle/bitbucket-api": "~0.6"
     }
 }
