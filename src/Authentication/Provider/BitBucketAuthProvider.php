@@ -7,7 +7,7 @@ use Bitbucket\API\Users;
 use League\OAuth1\Client\Credentials\TemporaryCredentials;
 use League\OAuth1\Client\Server\Bitbucket;
 use Martha\Core\Authentication\AuthenticationResult;
-use Martha\Core\Authentication\Provider\AbstractOAuth1Provider;
+use Martha\Core\Authentication\Provider\AbstractOAuthProvider;
 use Martha\Core\Domain\Entity\User;
 use Martha\Core\Plugin\AbstractPlugin;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
  * Class BitBucketAuthProvider
  * @package Martha\Plugin\GitHub\Authentication\Provider
  */
-class BitBucketAuthProvider extends AbstractOAuth1Provider
+class BitBucketAuthProvider extends AbstractOAuthProvider
 {
     /**
      * @var string
@@ -71,14 +71,6 @@ class BitBucketAuthProvider extends AbstractOAuth1Provider
     public function getUrl()
     {
         return $this->server->getAuthorizationUrl($this->temporaryCredentials);
-    }
-
-    /**
-     *
-     */
-    public function getIcon()
-    {
-        return $this->icon;
     }
 
     /**
